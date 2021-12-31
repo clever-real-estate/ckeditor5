@@ -1,6 +1,6 @@
 {
-  "name": "@ckeditor/ckeditor5-build-classic",
-  "version": "27.1.0",
+  "name": "@cleverrealestate/ckeditor5-build-classic",
+  "version": "27.1.4",
   "description": "The classic editor build of CKEditor 5 – the best browser-based rich text editor.",
   "keywords": [
     "ckeditor5-build",
@@ -43,7 +43,9 @@
     "@ckeditor/ckeditor5-paragraph": "^27.1.0",
     "@ckeditor/ckeditor5-paste-from-office": "^27.1.0",
     "@ckeditor/ckeditor5-table": "^27.1.0",
-    "@ckeditor/ckeditor5-typing": "^27.1.0"
+    "@ckeditor/ckeditor5-typing": "^27.1.0",
+    "@emagtechlabs/ckeditor5-classic-image-resize": "^1.0.6",
+    "ckeditor5-placeholder": "^1.0.5"
   },
   "devDependencies": {
     "@ckeditor/ckeditor5-core": "^27.1.0",

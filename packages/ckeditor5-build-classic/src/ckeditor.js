@@ -5,7 +5,7 @@
 
 // The editor creator to use.
 import ClassicEditorBase from '@ckeditor/ckeditor5-editor-classic/src/classiceditor';
-
+import ClassicImageResize from '@emagtechlabs/ckeditor5-classic-image-resize';
 import Essentials from '@ckeditor/ckeditor5-essentials/src/essentials';
 import UploadAdapter from '@ckeditor/ckeditor5-adapter-ckfinder/src/uploadadapter';
 import Autoformat from '@ckeditor/ckeditor5-autoformat/src/autoformat';
@@ -31,8 +31,11 @@ import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation';
 import CloudServices from '@ckeditor/ckeditor5-cloud-services/src/cloudservices';
 
+import Placeholder from "./placeholder/placeholder";
+
 export default class ClassicEditor extends ClassicEditorBase {}
 
+ClassicEditor.customTypes = [];
 // Plugins to include in the build.
 ClassicEditor.builtinPlugins = [
 	Essentials,
@@ -45,6 +48,7 @@ ClassicEditor.builtinPlugins = [
 	CloudServices,
 	EasyImage,
 	Heading,
+	ClassicImageResize,
 	Image,
 	ImageCaption,
 	ImageStyle,
@@ -58,7 +62,8 @@ ClassicEditor.builtinPlugins = [
 	PasteFromOffice,
 	Table,
 	TableToolbar,
-	TextTransformation
+	TextTransformation,
+	Placeholder
 ];
 
 // Editor configuration.
@@ -81,14 +86,21 @@ ClassicEditor.defaultConfig = {
 			'insertTable',
 			'mediaEmbed',
 			'undo',
-			'redo'
+			'redo',
+			'placeholder',
 		]
 	},
+	placeholderProps: {
+    types: ClassicEditor.customTypes,
+  },
 	image: {
 		toolbar: [
 			'imageStyle:inline',
 			'imageStyle:full',
 			'imageStyle:side',
+			'imageSize:width',
+			'imageSize:height',
+			'imageSize:lockAspectRatio',
 			'|',
 			'toggleImageCaption',
 			'imageTextAlternative'
