@@ -5,7 +5,6 @@
 
 // The editor creator to use.
 import ClassicEditorBase from '@ckeditor/ckeditor5-editor-classic/src/classiceditor';
-import ClassicImageResize from '@emagtechlabs/ckeditor5-classic-image-resize';
 import Essentials from '@ckeditor/ckeditor5-essentials/src/essentials';
 import UploadAdapter from '@ckeditor/ckeditor5-adapter-ckfinder/src/uploadadapter';
 import Autoformat from '@ckeditor/ckeditor5-autoformat/src/autoformat';
@@ -48,7 +47,6 @@ ClassicEditor.builtinPlugins = [
 	CloudServices,
 	EasyImage,
 	Heading,
-	ClassicImageResize,
 	Image,
 	ImageCaption,
 	ImageStyle,
@@ -98,9 +96,6 @@ ClassicEditor.defaultConfig = {
 			'imageStyle:inline',
 			'imageStyle:full',
 			'imageStyle:side',
-			'imageSize:width',
-			'imageSize:height',
-			'imageSize:lockAspectRatio',
 			'|',
 			'toggleImageCaption',
 			'imageTextAlternative'

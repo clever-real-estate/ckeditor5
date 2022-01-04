@@ -30,7 +30,9 @@ export default class PlaceholderEditing extends Plugin {
 
   _defineSchema() {
       const schema = this.editor.model.schema;
-
+      schema.extend( 'image', {
+        allowAttributes: [ 'width', 'height', 'style' ]
+      });
       schema.register( 'placeholder', {
           // Allow wherever text is allowed:
           allowWhere: '$text',
