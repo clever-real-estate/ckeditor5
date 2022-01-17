@@ -29,10 +29,17 @@ import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation';
 import CloudServices from '@ckeditor/ckeditor5-cloud-services/src/cloudservices';
+import GFMDataProcessor from '@ckeditor/ckeditor5-markdown-gfm/src/gfmdataprocessor';
 
-import Placeholder from "./placeholder/placeholder";
+import Placeholder from './placeholder/placeholder';
 
 export default class ClassicEditor extends ClassicEditorBase {}
+
+function Markdown( editor ) {
+	editor.data.processor = new GFMDataProcessor();
+}
+
+ClassicEditor.Markdown = Markdown;
 
 ClassicEditor.customTypes = [];
 // Plugins to include in the build.
